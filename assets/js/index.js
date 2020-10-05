@@ -30,12 +30,12 @@ function getData() {
                             <img class="c-avatar c-media__img" src="${member.dp}" />
                             <div class="c-media__content">
                                 <div class="c-media__title">${member.name}</div>
-                                <a class="c-media__link u-text--small" href="https://instagram.com/${member.handle}" target="_blank">@${member.handle}</a>
+                                <a class="c-media__link u-text--small">${member.quests}</a>
                             </div>
                         </div>
                         <div class="u-text--right c-kudos">
                             <div class="u-mt--8">
-                                <strong>${member.kudos}</strong> ${randomEmoji()}
+                                <strong>${member.quests_status}</strong> ${randomEmoji()}
                             </div>
                         </div>
                     </div>
@@ -57,18 +57,9 @@ function getData() {
                 list.appendChild(newRow);
             });
 
-            // Find Winner from sent kudos by sorting the drivers in the team array
-            let sortedTeam = data.sort((a, b) => b.sent - a.sent);
-            let winner = sortedTeam[0];
-
-            // Render winner card
-            const winnerCard = document.getElementById('winner');
-            winnerCard.innerHTML = `
-                <div class="u-text-small u-text--medium u-mb--16">Top Sender Last Week</div>
-                <img class="c-avatar c-avatar--lg" src="${winner.img}"/>
-                <h3 class="u-mt--16">${winner.name}</h3>
-                <span class="u-text--teal u-text--small">${winner.name}</span>
-            `;
+        
+            
+            
         } else {
             console.log("Something went wrong.")
         }
