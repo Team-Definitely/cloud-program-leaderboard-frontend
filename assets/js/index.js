@@ -4,7 +4,7 @@ function getData() {
     var xh = new XMLHttpRequest();
     xh.open(
         "GET",
-        "https://dscvit30daysgcp.herokuapp.com/",
+        "https://this-app-is-a-disaster.herokuapp.com/",
         true
     );
     xh.setRequestHeader("Content-Type", "application/json");
